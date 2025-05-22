@@ -17,6 +17,12 @@ html {
   min-height: 100%;
 }
 
+.headerIndex{
+  font-family: "Nimbus Sans Narrow", Arial, sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
 body {
   margin-bottom: 60px;
 }
