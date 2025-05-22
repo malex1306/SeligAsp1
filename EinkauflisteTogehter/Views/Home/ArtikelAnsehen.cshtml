@@ -7,36 +7,46 @@
 <div class="text-center">
     <h1>Einkaufsliste</h1>
     <h5>Folgende Artikel sollten besorgt werden:</h5>
-    @if (Model.Count() == 0)
-{
-    <p> Es sind noch keine Artikel gespeichert</p>
-}
-    <table class="table table-bordered table-striped">
-        @foreach (var geschaeft in Model)
-        {
-            
-            <tr>
-                <th colspan="2">@geschaeft.Key</th>
+
+    @if (!Model.Any())
+    {
+        <p>Es sind noch keine Artikel gespeichert</p>
+    }
+    else
+    {
+        <table class="table table-bordered table-striped">
+            @foreach (var geschaeft in Model)
+            {
+                <tr>
+                    <th colspan="3" class="table-primary">@geschaeft.Key</th>
+                </tr>
                 <tr>
                     <th>Artikel</th>
                     <th>Anzahl</th>
                     <th>Löschen</th>
                 </tr>
-            </tr>
-            foreach (var pos in geschaeft)
-            {
-                <tr>
-                    <td>@pos.Name</td>
-                    <td>@pos.Anzahl</td>
-                    <td>
-                        <a asp-action="ArtikelLoeschen" 
-                           class="btn btn-sm btn-danger" 
-                           asp-route-id="@pos.Id">X</a>
-                    </td>
-                </tr>
+
+                @foreach (var pos in geschaeft)
+                {
+                    <tr>
+                        <td>@pos.Name</td>
+                        <td>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a asp-action="AnzahlVerringern" asp-route-id="@pos.Id" class="btn btn-sm btn-danger me-2">−</a>
+                                <span class="mx-2">@pos.Anzahl</span>
+                                <a asp-action="AnzahlErhoehen" asp-route-id="@pos.Id" class="btn btn-sm btn-success ms-2">+</a>
+                            </div>
+                        </td>
+                        <td>
+                            <a asp-action="ArtikelLoeschen"
+                               class="btn btn-sm btn-danger"
+                               asp-route-id="@pos.Id">X</a>
+                        </td>
+                    </tr>
+                }
             }
-           
-        }
-    </table>
-    <a asp-action="Index" class="btn btn-primary">Zurück</a>
+        </table>
+    }
+
+    <a asp-action="Index" class="btn btn-primary mt-3">Zurück</a>
 </div>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EinkauflisteTogehter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c098257b0b4b999efdc8afa7f28e58bf0dd904a7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9fb85e80e136dccbbcead0ed39cad23330aada20")]
 [assembly: System.Reflection.AssemblyProductAttribute("EinkauflisteTogehter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EinkauflisteTogehter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

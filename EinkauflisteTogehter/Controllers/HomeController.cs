@@ -49,4 +49,16 @@ public class HomeController : Controller
         Repository.RemovePosition((int) id);
         return RedirectToAction(nameof(ArtikelAnsehen));
     }
+    public IActionResult AnzahlErhoehen(int id)
+    {
+        Repository.ErhoeheAnzahl(id);
+        return RedirectToAction(nameof(ArtikelAnsehen));
+    }
+
+    public IActionResult AnzahlVerringern(int id)
+    {
+        Repository.VerringereAnzahl(id);
+        return RedirectToAction(nameof(ArtikelAnsehen));
+    }
+
 }

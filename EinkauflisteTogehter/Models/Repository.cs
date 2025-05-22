@@ -25,4 +25,22 @@ public static class Repository
          Positions.Remove(postition);
       }
    }
+   public static void ErhoeheAnzahl(int id)
+   {
+      var pos = Postions.FirstOrDefault(p => p.Id == id);
+      if (pos != null)
+      {
+         pos.Anzahl++;
+      }
+   }
+
+   public static void VerringereAnzahl(int id)
+   {
+      var pos = Postions.FirstOrDefault(p => p.Id == id);
+      if (pos != null && pos.Anzahl > 1)
+      {
+         pos.Anzahl--;
+      }
+   }
+
 }
