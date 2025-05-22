@@ -6,5 +6,15 @@ namespace Einkaufsliste.Controllers;
 
 public class HomeController : Controller
 {
+    public IActionResult Index()
+    {
+        return View();
+    }
+
+    public IActionResult ArtikelForm()
+    {
+        return View();
+    }
+    
     
 }
